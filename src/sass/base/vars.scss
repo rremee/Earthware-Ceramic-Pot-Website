@@ -1,11 +1,44 @@
 @use "../libs/pxtorem.scss" as *;
+@use "sass:map";
 
 // Font
-$fontFamily: "";
+$fontFamilyGestura: "Gestura", serif;
+$fontFamilyPlusJakarta: "Plus Jakarta Sans", sans-serif;
 $fontSize: rem(16);
 
 // Colors
-$mainColor: #000;
+$colors: (
+    primary: (
+        100: #F7F8F2,
+        200: #F0F2E5,
+        300: #D7DAC5,
+        400: #D3DAB1,
+        500: #ADB584,
+    ),
+    tertiary: (
+        100: #FBF6F4,
+        200: #F6EDE9,
+        300: #F6E8E3,
+        400: #F4DFD8,
+        500: #FBD4C7,
+    ),
+    greyscale: (
+        50: #FFFFFF,
+        100: #EDEDED,
+        200: #C3C3C3,
+        300: #A7A7A7,
+        400: #888888,
+        500: #5E666C,
+        600: #666666,
+        800: #4B4B4B,
+        900: #3C4245,
+        1000: #000204,
+    )
+);
+
+@function getColor($group, $scale) {
+    @return map.get(map.get($colors, $group), $scale);
+}
 
 // Breakpoints
 $laptopL: rem(1439.98);

@@ -1,6 +1,13 @@
 @use "../libs/pxtorem.scss" as *;
 @use "../base/vars.scss" as *;
 
+body {
+    font-family: $fontFamilyPlusJakarta;
+    font-size: $fontSize;
+    color: getColor(greyscale, 500);
+    background-color: getColor(greyscale, 50);
+}
+
 .wrapper {
     min-height: 100%;
     display: flex;
@@ -15,6 +22,8 @@
 }
 
 [class*="__container"] {
-    margin: 0 auto;
-    max-width: rem($containerWidth);
+	max-width: clamp(rem(320), calc(100vw - 2rem), rem(1200));
+	margin: 0 auto;
+	padding: 0 clamp(rem(15), 2vw, rem(30));
+	width: 100%;
 }

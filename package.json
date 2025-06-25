@@ -1,6 +1,7 @@
 {
   "name": "earthware_ceramic_pot_website",
   "version": "1.0.0",
+  "type": "module",
   "description": "Earthware, multipage website",
   "main": "vite.config.js",
   "scripts": {
