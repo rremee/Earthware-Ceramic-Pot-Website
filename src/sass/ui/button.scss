@@ -1,2 +1,33 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
+
+.btn-cta {
+	padding: clamp(rem(13), 3vw, rem(18)) clamp(rem(24), 4vw, rem(46));
+	background-color: getColor(greyscale, 1000);
+	font-family: $fontFamilyPlusJakarta;
+	font-weight: 600;
+	font-size: rem(18);
+	color: getColor(greyscale, 50);
+	line-height: normal;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	transition: 0.6s background-color, 0.4s transform;
+	&:active {
+		transform: scale(0.84);
+		background-color: getColor(primary, 400);
+	}
+	&:disabled {
+		background-color: getColor(greyscale, 100);
+		color: getColor(greyscale, 200);
+	}
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			background-color: getColor(primary, 500);
+		}
+		&:focus {
+			background-color: getColor(greyscale, 800);
+		}
+	}
+}
