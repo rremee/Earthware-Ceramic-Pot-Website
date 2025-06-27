@@ -1,0 +1,18 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+@mixin typography(
+	$weight: 400,
+	$minFZ: 18,
+	$maxFZ: 20,
+	$vw: 4vw,
+	$line-h: 1.5,
+	$color: getColor(greyscale, 500),
+	$ff: $fontFamilyPlusJakarta
+) {
+	font-weight: $weight;
+	font-size: clamp(rem($minFZ), calc($vw + 1rem), rem($maxFZ));
+	line-height: $line-h;
+	color: $color;
+	font-family: $ff;
+}

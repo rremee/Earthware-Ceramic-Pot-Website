@@ -1,0 +1,34 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.paragraph {
+	@include typography;
+}
+
+.title-h1 {
+	@include typography(
+		$maxFZ: 80,
+		$minFZ: 60,
+		$vw: 8vw,
+		$ff: $fontFamilyGallient,
+		$color: getColor(greyscale, 1000),
+        $line-h: 1.425
+	);
+    text-align: center;
+}
+
+.title-h2 {
+	@include typography(
+		$maxFZ: 60,
+		$minFZ: 50,
+		$vw: 6vw,
+		$ff: $fontFamilyGallient,
+		$color: getColor(greyscale, 1000),
+        $line-h: 1.425
+	);
+    letter-spacing: 0.02em;
+    &--center {
+        text-align: center;
+    }
+}
