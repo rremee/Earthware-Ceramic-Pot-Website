@@ -8,3 +8,49 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/src/font/icomoon.eot?xz18cm');
+  src:  url('/src/font/icomoon.eot?xz18cm#iefix') format('embedded-opentype'),
+    url('/src/font/icomoon.ttf?xz18cm') format('truetype'),
+    url('/src/font/icomoon.woff?xz18cm') format('woff'),
+    url('/src/font/icomoon.svg?xz18cm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-car:before {
+  content: "\e900";
+  color: #0c2454;
+}
+.icon-card:before {
+  content: "\e901";
+  color: #0c2454;
+}
+.icon-cart:before {
+  content: "\e902";
+  color: #0c2454;
+}
+.icon-check:before {
+  content: "\e903";
+  color: #0c2454;
+}
+.icon-user:before {
+  content: "\e904";
+  color: #0c2454;
+}
