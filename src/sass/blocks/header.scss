@@ -1,0 +1,127 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
+
+.header {
+	&__container {
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: rem(50);
+		padding: rem(20) 0;
+	}
+
+	&__logo {
+		transition: 0.3s transform;
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				transform: scale(1.06);
+			}
+		}
+	}
+
+	&__menu {
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		column-gap: clamp(rem(12), 4vw, rem(16));
+	}
+
+	&__cart {
+		font-weight: 600;
+		&-link {
+			display: flex;
+			align-items: center;
+			column-gap: rem(6);
+			position: relative;
+			transition: 0.3s color;
+			&::before {
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 0%;
+				height: 144%;
+				transform: translate(-50%, -50%);
+				background-color: getColor(primary, 500);
+				z-index: -1;
+				transition: 0.3s width;
+			}
+			@media screen and (min-width: $tablet) {
+				&:hover {
+					color: getColor(greyscale, 100);
+					.header__icon {
+						color: getColor(greyscale, 100);
+					}
+					&::before {
+						width: 130%;
+					}
+				}
+			}
+		}
+	}
+
+	&__divider {
+		border: rem(1) solid getColor(greyscale, 100);
+		width: 0px;
+		height: rem(24);
+	}
+
+	&__icon {
+		font-size: rem(24);
+		color: getColor(greyscale, 1000);
+		transition: 0.3s color;
+	}
+
+	&__login {
+		color: getColor(greyscale, 1000);
+        transition: .3s color;
+		@media screen and (min-width: $tablet) {
+			&:hover {
+                color: getColor(primary, 500)
+			}
+		}
+	}
+
+	&__sign {
+		padding: rem(15) rem(29);
+	}
+}
+.menu {
+	display: flex;
+	align-items: center;
+	column-gap: clamp(rem(20), 5vw, rem(34));
+	&__item {
+	}
+
+	&__link {
+		@include typography($maxFZ: 18, $minFZ: 16);
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 0%;
+			height: 100%;
+			background-color: getColor(primary, 500);
+			z-index: -1;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			transition: 0.3s width;
+		}
+		transition: 0.3s color;
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				color: getColor(greyscale, 100);
+				&::before {
+					width: 120%;
+				}
+			}
+		}
+	}
+}
